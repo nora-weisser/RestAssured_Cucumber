@@ -12,11 +12,12 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import resources.TestDataBuild;
+import resources.Utils;
 
 import static io.restassured.RestAssured.*;
 import static org.junit.Assert.*;
 
-public class StepDefinition {
+public class StepDefinition extends Utils {
     RequestSpecification res;
     ResponseSpecification resspec;
     Response response;
@@ -24,15 +25,8 @@ public class StepDefinition {
 
     @Given("Add Place Payload")
     public void add_place_payload() {
-
-        RestAssured.baseURI = "https://rahulshettyacademy.com";
-
-        RequestSpecification req = new RequestSpecBuilder().setBaseUri("https://rahulshettyacademy.com").addQueryParam("key", "qaclick123")
-                .setContentType(ContentType.JSON).build();
-
         resspec = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
-
-        res = given().log().all().spec(req)
+        res = given().log().all().spec(RequestSpecification())
                 .body(data.addPlacePayload());
     }
     @When("user calls {string} with Post http request")
