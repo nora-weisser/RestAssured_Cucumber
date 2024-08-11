@@ -3,14 +3,13 @@ package stepDefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.restassured.RestAssured;
-import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
+import resources.APIResources;
 import resources.TestDataBuild;
 import resources.Utils;
 
@@ -31,12 +30,17 @@ public class StepDefinition extends Utils {
         res = given().spec(RequestSpecification())
                 .body(data.addPlacePayload(name, language, address));
     }
-    @When("user calls {string} with Post http request")
-    public void user_calls_with_post_http_request(String string) {
+    @When("user calls {string} with {string} http request")
+    public void user_calls_with_post_http_request(String resource, String method) {
+        APIResources resourceAPI = APIResources.valueOf(resource);
+        System.out.println(resourceAPI.getResource());
         resspec = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
-        response = res.when().post("maps/api/place/add/json")
-                .then().spec(resspec)
-                .extract().response();
+        if (method.equalsIgnoreCase("POST")) {
+            response = res.when().post(resourceAPI.getResource());
+        } else if (method.equalsIgnoreCase("GET")) {
+            response = res.when().get(resourceAPI.getResource());
+        }
+
     }
     @Then("the API call is success with status code {int}")
     public void the_api_call_is_success_with_status_code(Integer int1) {
