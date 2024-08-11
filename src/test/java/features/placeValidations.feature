@@ -9,3 +9,4 @@ Feature: Validating Place APIs
     Examples:
     | name  | language | address           |
     |AAhouse| English  | World Cross Center|
+    |BBhouse| Spanish  | Sea Cross Center  |
