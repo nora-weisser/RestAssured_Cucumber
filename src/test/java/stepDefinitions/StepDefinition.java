@@ -26,10 +26,10 @@ public class StepDefinition extends Utils {
     Response response;
     TestDataBuild data = new TestDataBuild();
 
-    @Given("Add Place Payload")
-    public void add_place_payload() throws IOException {
+    @Given("Add Place Payload with {string} {string} {string}")
+    public void add_place_payload(String name, String language, String address) throws IOException {
         res = given().spec(RequestSpecification())
-                .body(data.addPlacePayload());
+                .body(data.addPlacePayload(name, language, address));
     }
     @When("user calls {string} with Post http request")
     public void user_calls_with_post_http_request(String string) {
