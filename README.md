@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository provides an example of how to automate API testing using **RestAssured** in combination with **Cucumber**. The framework leverages the power of BDD (Behavior Driven Development) to make the API tests more readable and understandable, even for non-technical stakeholders.
+This repository is the result of hands-on learning and practical exercises completed as part of an [Udemy course](https://www.udemy.com/course/rest-api-automation-testing-rest-assured/) on API testing with RestAssured and Cucumber. It showcases the application of concepts covered in the course, including BDD test development, API automation, and effective logging and reporting practices.
 
 ## Table of Contents
 
