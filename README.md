@@ -14,7 +14,7 @@ This repository is the result of hands-on learning and practical exercises compl
 - [Logging](#logging)
 
 ## Project Structure
-    .
+    
     ├── src
         └── main  
               └── java
