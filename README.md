@@ -16,11 +16,11 @@ This repository is the result of hands-on learning and practical exercises compl
 ## Project Structure
     .
     ├── src
-        ├── main  
-        │     └── java
+        └── main  
+              └── java
                     └── pojoClasses
         └── test         
-        │   └── java
+               └── java
                     ├── cucumber.Options   # Contains the Cucumber test runner class responsible for executing feature files.
                     ├── features        # Contains the feature files written in Gherkin syntax.
                     ├── resources       # Contains configuration files like `config.properties` to manage environment-specific variables and different kinds of utilities.
