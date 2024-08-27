@@ -7,14 +7,11 @@ This repository provides an example of how to automate API testing using **RestA
 ## Table of Contents
 
 - [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
 - [Dependencies](#dependencies)
 - [Writing Tests](#writing-tests)
 - [Running Tests](#running-tests)
 - [Reporting](#reporting)
-- [Configuration](#configuration)
-- [Contributing](#contributing)
-- [License](#license)
+- [Logging](#logging)
 
 ## Project Structure
     .
@@ -104,6 +101,6 @@ After executing the tests, Cucumber automatically generates reports that provide
 
 These reports provide valuable insights into the quality and behavior of the APIs under test, helping you quickly identify issues and share results with stakeholders.
 
-## Logging 
+## Logging
 
 Detailed logs are captured and stored in the `logging.txt` file, providing insights for troubleshooting and debugging your test cases. These logs offer a detailed record of the API requests and responses, making it easier to identify and resolve issues efficiently.
